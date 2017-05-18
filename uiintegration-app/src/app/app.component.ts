@@ -35,5 +35,4 @@ export class AppComponent {
       .getIssues(this.datePicked)
       .then(result => this.issues = result);
   }
-  // function
 }

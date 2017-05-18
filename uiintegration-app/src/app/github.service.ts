@@ -19,7 +19,7 @@ export class GithubService {
 
         return this.http.get(requestUrl)
             .toPromise()
-            .then(response => JSON.stringify(response.json()))
+            .then(response => response.json())
             .catch(this.handleError);
     }
 
