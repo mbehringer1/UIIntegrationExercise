@@ -4,10 +4,10 @@
 
 <body>
   <input type="date" name="dtPicker" id="dtPicker" value="{{datePicked}}" (change)="go($event)" />
-  <!--<input type="button" value="Go" id="btnGo" (click)="go()" />-->
   <div>
-    <pre>
-      {{issues | json}}
-    </pre>
+    <!--see:https://github.com/matiboy/angular2-prettyjson-->
+    <div *ngFor="let issue of issues">
+      <prettyjson id="{{issue.id}}" [obj]="issue"></prettyjson>      
+    </div>
   </div>
 </body>

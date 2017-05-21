@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
+import { Issue } from './classes/issue';
 
 @Injectable()
 export class GithubService {
@@ -10,7 +11,7 @@ export class GithubService {
 
     constructor(private http: Http) { }
 
-    getIssues(dateString: string): Promise<string> {
+    getIssues(dateString: string): Promise<Issue[]> {
         // https://api.github.com/repos/angular/angular/issues?since=2017-05-09
         var requestUrl = this.githubUrl;
         if (dateString != null && dateString != this.emptyString) {
@@ -19,7 +20,7 @@ export class GithubService {
 
         return this.http.get(requestUrl)
             .toPromise()
-            .then(response => response.json())
+            .then(response => response.json() as Issue[])
             .catch(this.handleError);
     }
 

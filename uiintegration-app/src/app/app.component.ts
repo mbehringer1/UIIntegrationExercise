@@ -1,5 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewChecked } from '@angular/core';
 import { GithubService } from './github.service';
+import { PrettyJsonComponent } from 'angular2-prettyjson';
+
+import { Issue } from './classes/issue';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +10,12 @@ import { GithubService } from './github.service';
   styleUrls: ['./app.component.css'],
   providers: [GithubService]
 })
-export class AppComponent {
+export class AppComponent implements AfterViewChecked {
   emptyString: string = '';
   title: string = 'UITest App';
   today: Date = new Date();
   datePicked: string = '';
-  issues: string;
+  issues: Issue[];
 
   constructor(private githubService: GithubService) {
 
@@ -34,5 +37,11 @@ export class AppComponent {
     this.githubService
       .getIssues(this.datePicked)
       .then(result => this.issues = result);
+  }
+
+  ngAfterViewChecked() {
+    console.log('ngAfterViewChecked');
+    // PR.prettyPrint();
+    //Never got around to this one ... maybe another time.
   }
 }
