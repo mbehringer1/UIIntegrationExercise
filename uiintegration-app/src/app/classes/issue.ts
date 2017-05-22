@@ -8,7 +8,7 @@ import { Repository } from './repository';
 
 export class Issue {
     constructor(
-        public Id: number,
+        public id: number,
         public Url: string,
         public HtmlUrl: string,
         public CommentsUrl: string,

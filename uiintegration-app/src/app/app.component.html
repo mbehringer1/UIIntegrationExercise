@@ -7,7 +7,8 @@
   <div>
     <!--see:https://github.com/matiboy/angular2-prettyjson-->
     <div *ngFor="let issue of issues">
-      <prettyjson id="{{issue.id}}" [obj]="issue"></prettyjson>      
+      <prettyjson id="{{issue.id}}" [obj]="'Issue#: ' + issue.id + ' Issue Create Date: ' + issue.created_at" (click)="idClicked($event, issue.id)"></prettyjson>      
+      <prettyjson id="{{issue.id}}body" [obj]="issue" (click)="bodyClicked($event, issue.id)" style="display: none"></prettyjson>      
     </div>
   </div>
 </body>

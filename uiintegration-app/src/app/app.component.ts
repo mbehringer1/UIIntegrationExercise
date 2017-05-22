@@ -39,6 +39,21 @@ export class AppComponent implements AfterViewChecked {
       .then(result => this.issues = result);
   }
 
+  idClicked(event, id): void {
+    var issue = this.issues.find(x => x.id == id);
+    var htmlSnippet = document.getElementById(id + 'body');
+    if (htmlSnippet.style.display == "block") {
+      htmlSnippet.style.display = "none";
+    }
+    else {
+      htmlSnippet.style.display = "block";
+    }
+  }
+
+  bodyClicked(event, id): void {
+    var htmlSnippet = document.getElementById(id + 'body');
+    //maybe a scroll to or something.
+  }
   ngAfterViewChecked() {
     console.log('ngAfterViewChecked');
     // PR.prettyPrint();
