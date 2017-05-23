@@ -2,8 +2,8 @@
 
 export class Label {
     constructor(
-        public Url: string,
-        public Name: string,
-        public Color: string
+        public url: string,
+        public name: string,
+        public color: string
     ) { }
 }

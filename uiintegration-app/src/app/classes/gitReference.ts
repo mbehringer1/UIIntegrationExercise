@@ -5,10 +5,10 @@ import { Repository } from './repository';
 
 export class GitReference {
     constructor(
-        public Url: string,
-        public Label: string,
-        public Ref: string,
-        public Sha: string,
-        public User: User,
-        public Repository: Repository) { }
+        public url: string,
+        public label: string,
+        public ref: string,
+        public sha: string,
+        public user: User,
+        public repository: Repository) { }
 }

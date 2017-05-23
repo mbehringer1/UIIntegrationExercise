@@ -2,9 +2,9 @@
 
 export class Plan {
     constructor(
-        public Collaborators: number,
-        public Name: string,
-        public PrivateRepos: number,
-        public Space: number,
-        public BillingEmail: string) { }
+        public collaborators: number,
+        public name: string,
+        public private_repos: number,
+        public space: number,
+        public billing_email: string) { }
 }

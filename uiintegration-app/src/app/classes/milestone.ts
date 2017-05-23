@@ -4,17 +4,17 @@ import { User } from './user';
 
 export class Milestone {
     constructor(
-        public Url: string,
-        public HtmlUrl: string,
-        public Number: number,
-        public State: string,
-        public Title: string,
-        public Descriptioin: string,
-        public Creator: User,
-        public OpenIssues: number,
-        public ClosedIssues: number,
-        public CreatedAt: Date,
-        public DueOn: Date,
-        public ClosedAt: Date
+        public url: string,
+        public html_url: string,
+        public number: number,
+        public state: string,
+        public title: string,
+        public description: string,
+        public creator: User,
+        public open_issues: number,
+        public closed_issues: number,
+        public created_at: Date,
+        public due_on: Date,
+        public closed_at: Date
     ) { }
 }

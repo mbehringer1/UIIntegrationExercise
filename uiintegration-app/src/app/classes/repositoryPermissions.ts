@@ -2,8 +2,8 @@
 
 export class RepositoryPermissions {
     constructor(
-        public Admin: boolean,
-        public Push: boolean,
-        public Pull: boolean
+        public admin: boolean,
+        public push: boolean,
+        public pull: boolean
     ) { }
 }
