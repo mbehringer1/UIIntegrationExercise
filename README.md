@@ -12,3 +12,5 @@ To run from the command line you will:
 > npm install typescript
 
 > ng serve --open
+
+TODO: Implement master/detail pattern
