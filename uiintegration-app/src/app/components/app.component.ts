@@ -1,13 +1,13 @@
 import { Component, AfterViewChecked } from '@angular/core';
-import { GithubService } from './github.service';
+import { GithubService } from '../providers/github.service';
 import { PrettyJsonComponent } from 'angular2-prettyjson';
 
-import { Issue } from './classes/issue';
+import { Issue } from '../classes/issue';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  templateUrl: '../templates/app.component.html',
+  styleUrls: ['../styles/app.component.css'],
   providers: [GithubService]
 })
 export class AppComponent implements AfterViewChecked {
@@ -37,6 +37,8 @@ export class AppComponent implements AfterViewChecked {
     this.githubService
       .getIssues(this.datePicked)
       .then(result => this.issues = result);
+
+    var xxx = this.today.getDate() - new Date(this.datePicked).getDate();
   }
 
   idClicked(event, id): void {

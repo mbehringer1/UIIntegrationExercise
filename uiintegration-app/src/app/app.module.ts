@@ -5,9 +5,9 @@ import { HttpModule } from '@angular/http';
 import { PrettyJsonModule, SafeJsonPipe } from 'angular2-prettyjson';//see:https://github.com/matiboy/angular2-prettyjson
 import { JsonPipe } from '@angular/common';
 
-import { GithubService } from './github.service';
+import { GithubService } from './providers/github.service';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './components/app.component';
 
 @NgModule({
   declarations: [

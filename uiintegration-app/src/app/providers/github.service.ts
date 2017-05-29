@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
-import { Issue } from './classes/issue';
+import { Issue } from '../classes/issue';
 
 @Injectable()
 export class GithubService {
