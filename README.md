@@ -13,4 +13,7 @@ To run from the command line you will:
 
 > ng serve --open
 
-TODO: Implement master/detail pattern
+TODO: 
+ 1. ~~Implement master/detail pattern~~
+ 2. Clean up css classes.
+ 3. Bootstrap.
