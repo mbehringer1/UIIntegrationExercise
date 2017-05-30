@@ -8,10 +8,12 @@ import { JsonPipe } from '@angular/common';
 import { GithubService } from './providers/github.service';
 
 import { AppComponent } from './components/app.component';
+import { IssueDetail } from './components/issue-detail.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IssueDetail
   ],
   imports: [
     BrowserModule,

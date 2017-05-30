@@ -1,0 +1,18 @@
+.divLeft{
+    float: left;
+    width: 30%;
+}
+
+.divRight{
+    float: left;
+    width: 70%;
+}
+
+.selected{
+    background-color: cornflowerblue;
+}
+
+p.detail{
+    border-style: groove;
+    border-width: 3px;
+}

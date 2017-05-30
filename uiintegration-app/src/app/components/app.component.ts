@@ -1,4 +1,4 @@
-import { Component, AfterViewChecked } from '@angular/core';
+import { Component } from '@angular/core';
 import { GithubService } from '../providers/github.service';
 import { PrettyJsonComponent } from 'angular2-prettyjson';
 
@@ -10,12 +10,13 @@ import { Issue } from '../classes/issue';
   styleUrls: ['../styles/app.component.css'],
   providers: [GithubService]
 })
-export class AppComponent implements AfterViewChecked {
+export class AppComponent {
   emptyString: string = '';
   title: string = 'UITest App';
   today: Date = new Date();
   datePicked: string = '';
   issues: Issue[];
+  selectedIssue: Issue;
 
   constructor(private githubService: GithubService) {
 
@@ -34,31 +35,17 @@ export class AppComponent implements AfterViewChecked {
         this.datePicked = selectedDate;
       }
     }
+
+    this.selectedIssue = null;
     this.githubService
       .getIssues(this.datePicked)
       .then(result => this.issues = result);
 
-    var xxx = this.today.getDate() - new Date(this.datePicked).getDate();
+    //save this for later.  going to create a different routine based on date duration.
+    //var xxx = this.today.getDate() - new Date(this.datePicked).getDate();
   }
 
-  idClicked(event, id): void {
-    var issue = this.issues.find(x => x.id == id);
-    var htmlSnippet = document.getElementById(id + 'body');
-    if (htmlSnippet.style.display == "block") {
-      htmlSnippet.style.display = "none";
-    }
-    else {
-      htmlSnippet.style.display = "block";
-    }
-  }
-
-  bodyClicked(event, id): void {
-    var htmlSnippet = document.getElementById(id + 'body');
-    //maybe a scroll to or something.
-  }
-  ngAfterViewChecked() {
-    console.log('ngAfterViewChecked');
-    // PR.prettyPrint();
-    //Never got around to this one ... maybe another time.
+  onSelect(issue: Issue): void {
+    this.selectedIssue = issue;
   }
 }
