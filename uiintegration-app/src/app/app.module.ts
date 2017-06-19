@@ -25,6 +25,6 @@ import { IssueDetail } from './components/issue-detail.component';
     GithubService,
     { provide: JsonPipe, useClass: SafeJsonPipe }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, IssueDetail]
 })
 export class AppModule { }
